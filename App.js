@@ -1,56 +1,27 @@
-import React, {useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  FlatList,
-  Text,
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
-import {Card} from './components/card';
-import {cachoeiras} from './data/data';
+import * as React from 'react';
+import Details from './views/details';
+import Home from './views/home';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
-const App = () => {
-  return (
-    <SafeAreaView style={styles.content}>
-      <StatusBar backgroundColor="#303F9F" barStyle="light-content" />
-      <View style={styles.header}>
-        <Text style={styles.textHeader}>CACHOEIRAS</Text>
-      </View>
-      <FlatList
-        keyExtractor={item => item.id.toString()}
-        data={cachoeiras}
-        renderItem={({item}) => <Card data={item} />}
-      />
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  content: {
-    backgroundColor: '#FAFAFA',
-    flex: 1,
+const App = createStackNavigator(
+  {
+    Home: Home,
+    Details: Details,
   },
-  header: {
-    height: 50,
-    backgroundColor: '#3F51B5',
-    alignItems: 'center',
-    justifyContent: 'center',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowRadius: 4,
-    shadowOffset: {
-      width: 0,
-      height: 3,
+  {
+    initialRouteName: 'Home',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      header: null,
     },
-    marginBottom: 5,
-    zIndex: 999,
   },
-  textHeader: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
+);
 
-export default App;
+export default createAppContainer(App);

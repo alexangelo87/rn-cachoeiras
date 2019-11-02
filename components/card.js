@@ -1,9 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 
 export const Card = props => {
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() =>
+        props.navigation.navigate('Details', {nome: props.data.nome})
+      }>
       <Image
         source={{
           uri: props.data.imagem,
