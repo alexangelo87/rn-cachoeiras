@@ -3,31 +3,26 @@ import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 
 export const Card = props => {
   return (
-    <View style={styles.content}>
-      <TouchableOpacity style={styles.card}>
-        <Image
-          source={{
-            uri: props.data.imagem,
-          }}
-          style={styles.cardImage}
-        />
-        {console.log(props)}
-        <Text style={styles.textCard}>{props.data.nome}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.card}>
+      <Image
+        source={{
+          uri: props.data.imagem,
+        }}
+        style={styles.cardImage}
+      />
+      {console.log(props)}
+      <Text style={styles.textCard}>{props.data.nome}</Text>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  content: {
-    marginTop: 20,
-    backgroundColor: '#f5fcff',
-  },
   textCard: {
     fontSize: 16,
     padding: 10,
   },
   card: {
+    marginTop: 10,
     backgroundColor: '#fff',
     marginBottom: 10,
     marginLeft: '2%',
@@ -40,6 +35,7 @@ const styles = StyleSheet.create({
       width: 3,
       height: 3,
     },
+    zIndex: 998,
   },
   cardImage: {
     height: 200,
