@@ -16,4 +16,16 @@ export const cachoeiras = [
     nome: 'Cachoeira de Boa Vista',
     imagem: 'https://i.ytimg.com/vi/aV1C-eGDWHY/maxresdefault.jpg',
   },
+  {
+    id: 4,
+    nome: 'Véu da Noiva',
+    imagem:
+      'https://1z5jae2n0j263mpko2pt22bi-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/cachoeiras-serra-do-cipo.jpg',
+  },
+  {
+    id: 5,
+    nome: 'Cachoeira da Fumaça',
+    imagem:
+      'https://1z5jae2n0j263mpko2pt22bi-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/brazil-cachoeira-cachoeira-da-fumaca.jpg',
+  },
 ];

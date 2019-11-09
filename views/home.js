@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, FlatList, SafeAreaView, StatusBar} from 'react-native';
 import {Card} from '../components/card';
-import {Header} from '../components/header';
 import {cachoeiras} from '../data/data';
 
 export default class Home extends Component {
@@ -9,11 +8,15 @@ export default class Home extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'CACHOEIRAS',
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.content}>
         <StatusBar backgroundColor="#1976D2" barStyle="light-content" />
-        <Header titulo={'cachoeiras'} />
+        {/* <Header titulo={'cachoeiras'} /> */}
         <FlatList
           keyExtractor={item => item.id.toString()}
           data={cachoeiras}
